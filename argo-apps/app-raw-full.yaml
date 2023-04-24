@@ -13,13 +13,15 @@ spec:
   # Source 1
    - repoURL: git@github.com:vincoll/argocd-workshop
      path: k8s-manifests/raw
-     targetRevision: HEAD
+     targetRevision: dev
   # Source 2
    - repoURL: git@github.com:vincoll/argocd-workshop
      path: k8s-manifests/extra
-     targetRevision: HEAD
+     targetRevision: dev
 
   syncPolicy:
     automated:
       prune: true # Delete Running K8s if they do not exist anymore in Git Repo
       selfHeal: true # Restore actively the Git repo manifest state
+    syncOptions:
+      - CreateNamespace=true

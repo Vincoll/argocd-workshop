@@ -11,8 +11,10 @@ spec:
   source:
     repoURL: git@github.com:vincoll/argocd-workshop
     path: k8s-manifests/raw
-    targetRevision: HEAD
+    targetRevision: dev
   syncPolicy:
     automated: # Activated
       prune: true
       selfHeal: false # FALSE
+    syncOptions:
+      - CreateNamespace=true

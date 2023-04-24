@@ -13,11 +13,11 @@ spec:
   # Source 1
    - repoURL: git@github.com:vincoll/argocd-workshop
      path: k8s-manifests/raw
-     targetRevision: HEAD
+     targetRevision: dev
   # Source 2
    - repoURL: git@github.com:vincoll/argocd-workshop
      path: k8s-manifests/extra
-     targetRevision: HEAD
+     targetRevision: dev
   syncPolicy:
     automated: # Activated
       prune: true

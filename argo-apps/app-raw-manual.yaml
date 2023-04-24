@@ -11,10 +11,12 @@ spec:
   source:
     repoURL: git@github.com:vincoll/argocd-workshop # Git repo where to sync
     path: k8s-manifests/raw # Path in the git repo
-    targetRevision: HEAD # Branch
+    targetRevision: dev # Branch
 
   # NO SYNC POLICY -> MANUAL OPERATION ONLY
-  # syncPolicy:
+  syncPolicy:
   #   automated:
   #     prune: false # FALSE
   #     selfHeal: false # FALSE
+    syncOptions:
+      - CreateNamespace=true

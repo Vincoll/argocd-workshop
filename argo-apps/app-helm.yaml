@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: git@github.com:vincoll/argocd-workshop
     path: raw
-    targetRevision: HEAD
+    targetRevision: dev
     helm:
       valueFiles:
         - ../../../legacy/monolith/values-control.yaml
@@ -19,3 +19,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
