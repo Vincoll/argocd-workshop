@@ -8,7 +8,7 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: demo-fs
   project: default
-  source:
+  sources:
   # https://argo-cd.readthedocs.io/en/stable/user-guide/multiple_sources/
   # Source 1
    - repoURL: git@github.com:vincoll/argocd-workshop
