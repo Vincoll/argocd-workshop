@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-demo-full-sync
+  name: app-helm-full-sync
   namespace: kube-system
 spec:
   destination:
