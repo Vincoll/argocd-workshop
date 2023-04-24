@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-demo-full
+  namespace: argocd
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: demo-fs
+  project: default
+  source:
+  # https://argo-cd.readthedocs.io/en/stable/user-guide/multiple_sources/
+  # Source 1
+   - repoURL: git@github.com:vincoll/_argo-workshop
+     path: k8s-manifests/raw
+     targetRevision: HEAD
+  # Source 2
+   - repoURL: git@github.com:vincoll/_argo-workshop
+     path: k8s-manifests/extra
+     targetRevision: HEAD
+
+  syncPolicy:
+    automated:
+      prune: true # Delete Running K8s if they do not exist anymore in Git Repo
+      selfHeal: true # Restore actively the Git repo manifest state

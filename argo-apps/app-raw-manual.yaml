@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-demo-manual # Argo App Name
+  namespace: argocd # K8s NS (ArgoCD)
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc' # Local cluster (will be different if Argo controls multiples cluster)
+    namespace: demo-manual # Target K8s Namespace
+  project: default # Argo logical envelope (for admins)
+  source:
+    repoURL: git@github.com:vincoll/_argo-workshop # Git repo where to sync
+    path: k8s-manifests/raw # Path in the git repo
+    targetRevision: HEAD # Branch
+
+  # NO SYNC POLICY -> MANUAL OPERATION ONLY
+  # syncPolicy:
+  #   automated:
+  #     prune: false # FALSE
+  #     selfHeal: false # FALSE

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-demo-full-sync
+  namespace: argocd
+spec:
+  destination:
+    name: 
+    namespace: demo
+  project: default
+  source:
+    repoURL: git@github.com:vincoll/_argo-workshop
+    path: raw
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../../../legacy/monolith/values-control.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

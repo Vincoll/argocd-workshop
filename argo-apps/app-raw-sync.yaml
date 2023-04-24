@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-demo-full-sync
+  namespace: demo-sync
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: demo-fs
+  project: default
+  source:
+    repoURL: git@github.com:vincoll/_argo-workshop
+    path: k8s-manifests/raw
+    targetRevision: HEAD
+  syncPolicy:
+    automated: # Activated
+      prune: true
+      selfHeal: false # FALSE
