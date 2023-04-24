@@ -9,7 +9,7 @@ spec:
     namespace: demo
   project: default
   source:
-    repoURL: git@github.com:vincoll/_argo-workshop
+    repoURL: git@github.com:vincoll/argocd-workshop
     path: raw
     targetRevision: HEAD
     helm:

@@ -9,7 +9,7 @@ spec:
     namespace: demo-fs
   project: default
   source:
-    repoURL: git@github.com:vincoll/_argo-workshop
+    repoURL: git@github.com:vincoll/argocd-workshop
     path: k8s-manifests/raw
     targetRevision: HEAD
   syncPolicy:

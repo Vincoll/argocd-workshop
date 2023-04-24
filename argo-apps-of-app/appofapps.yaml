@@ -14,7 +14,7 @@ spec:
   project: default
   source:
     path: argocd-apps/
-    repoURL: https://github.com/vincoll/_argo-workshop
+    repoURL: https://github.com/vincoll/argocd-workshop
     targetRevision: HEAD
 
   syncPolicy:
