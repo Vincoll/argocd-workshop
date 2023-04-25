@@ -22,30 +22,29 @@ spec:
 ---
 apiVersion: apps/v1
 kind: Deployment
-metadataaaaaaaaaa:
+metadataaaaaaaaaaaaaaaaaaaa:
+  name: server
+  namespace: default
   labels:
-    name: makeademo-server
+    app:  server
 spec:
-  replicas: 3
-  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: server
-      app.kubernetes.io/name: makeademo
-    template:
-      metadata:
-        labels:
-          app: server
-          app.kubernetes.io/name: makeademo
-      spec:
-        containers:
-        - image: nginx:alpine
-          imagePullPolicy: Always
-          name: server
-          resources:
-            limits:
-              memory: 30Mi
-            requests:
-              cpu: 10m
-              memory: 30Mi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - image: nginx:alpine
+        imagePullPolicy: Always
+        name: server
+        resources:
+          limits:
+            memory: 30Mi
+          requests:
+            cpu: 10m
+            memory: 30Mi
 
