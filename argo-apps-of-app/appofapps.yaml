@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: argocd-infra-workshop
   namespace: argocd  # Must be argocd
-  label:
-    team: infrastructure
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:

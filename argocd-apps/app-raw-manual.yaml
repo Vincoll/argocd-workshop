@@ -9,7 +9,7 @@ spec:
     namespace: demo-manual # Target K8s Namespace
   project: default # Argo logical envelope (for admins)
   source:
-    repoURL: git@github.com:vincoll/argocd-workshop # Git repo where to sync
+    repoURL: https://github.com/Vincoll/argocd-workshop # Git repo where to sync
     path: k8s-manifests/raw # Path in the git repo
     targetRevision: dev # Branch
 

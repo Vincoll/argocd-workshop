@@ -11,11 +11,11 @@ spec:
   sources:
   # https://argo-cd.readthedocs.io/en/stable/user-guide/multiple_sources/
   # Source 1
-    - repoURL: git@github.com:vincoll/argocd-workshop
+    - repoURL: https://github.com/Vincoll/argocd-workshop
       path: k8s-manifests/raw
       targetRevision: dev
   # Source 2
-    - repoURL: git@github.com:vincoll/argocd-workshop
+    - repoURL: https://github.com/Vincoll/argocd-workshop
       path: k8s-manifests/extra
       targetRevision: dev
 
