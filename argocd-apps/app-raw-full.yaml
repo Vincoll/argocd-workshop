@@ -1,4 +1,4 @@
-k get apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-demo-full-sync
