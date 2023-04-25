@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd-infra-workshop
-  namespace: kube-system  # Must be argocd
+  namespace: argocd  # Must be argocd
   label:
     team: infrastructure
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: kube-system
+    namespace: argocd
     server: 'https://kubernetes.default.svc'
   project: default
   source:
