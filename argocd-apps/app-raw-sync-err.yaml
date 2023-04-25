@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-demo-sync-err
+  namespace: argocd
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: demo-err
+  project: default
+  source:
+    repoURL: https://github.com/Vincoll/argocd-workshop
+    path: k8s-manifests/raw-with-err
+    targetRevision: dev
+  syncPolicy:
+    automated: # Activated
+      prune: true
+      #selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
+---
