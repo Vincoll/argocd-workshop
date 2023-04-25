@@ -1,7 +1,7 @@
-apiVersion: argoproj.io/v1alpha1
+k get apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-demo-full
+  name: app-demo-full-sync
   namespace: argocd
 spec:
   destination:

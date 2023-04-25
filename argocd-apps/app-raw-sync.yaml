@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-demo-error-full-sync
+  name: app-demo-sync
   namespace: argocd
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: demo-err
+    namespace: demo-sync
   project: default
   source:
     repoURL: https://github.com/Vincoll/argocd-workshop

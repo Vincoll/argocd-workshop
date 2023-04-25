@@ -6,11 +6,11 @@ metadata:
 spec:
   destination:
     name: 
-    namespace: demo
+    namespace: demo-helm
   project: default
   source:
     repoURL: https://github.com/Vincoll/argocd-workshop
-    path: raw
+    path: helm/chart/example
     targetRevision: dev
     helm:
       valueFiles:
