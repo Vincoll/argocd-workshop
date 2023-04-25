@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-demo-full-sync
+  name: app-demo-error-full-sync
   namespace: argocd
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: demo-fs
+    namespace: demo-err
   project: default
   source:
     repoURL: https://github.com/Vincoll/argocd-workshop
@@ -18,3 +18,4 @@ spec:
       selfHeal: false # FALSE
     syncOptions:
       - CreateNamespace=true
+---

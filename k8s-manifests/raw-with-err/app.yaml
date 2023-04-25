@@ -24,7 +24,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadataaaaaaaaaaaaaaaaaaaa:
   name: server
-  namespace: default
   labels:
     app:  server
 spec:
