@@ -16,4 +16,6 @@ spec:
     targetRevision: dev
 
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: false
