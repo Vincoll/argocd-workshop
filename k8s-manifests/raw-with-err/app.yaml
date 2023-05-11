@@ -46,4 +46,14 @@ spec:
           requests:
             cpu: 10m
             memory: 30Mi
-
+        # Bad Probes to show the new ArgoUI
+        readinessProbe:
+          tcpSocket:
+            port: 8088
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          tcpSocket:
+            port: 8088
+          initialDelaySeconds: 10
+          periodSeconds: 20
