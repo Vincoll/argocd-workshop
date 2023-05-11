@@ -2,15 +2,15 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    app.kubernetes.io/name: makeademo
-  name: makeademo-makeademo
+    app.kubernetes.io/name: argodemo
+  name: argodemo-argodemo
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/name: makeademo
-  name: makeademo-server
+    app.kubernetes.io/name: argodemo
+  name: argodemo-server
 spec:
   ports:
   - name: http
@@ -18,8 +18,7 @@ spec:
     targetPort: 8080
   selector:
     app: server
-    app.kubernetes.io/name: makeademo
-
+    app.kubernetes.io/name: argodemo
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -47,3 +46,13 @@ spec:
           requests:
             cpu: 10m
             memory: 30Mi
+
+# ---
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: wow-a-new-configmap
+#   labels:
+#     app: server
+# data:
+#   my-key: my-value
