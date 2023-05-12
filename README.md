@@ -45,3 +45,10 @@ We will talk about :
 kubectl apply -f argo-apps-of-app/appofapps.yaml
 
 ```
+
+### Delete
+
+```shell
+kubectl delete ns argocd demo-fs demo-sync 
+
+```
